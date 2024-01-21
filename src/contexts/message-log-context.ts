@@ -1,9 +1,13 @@
 import { createContext } from 'react';
-import { Message } from '../types/message';
+import { AssistantResponseStage, Message } from '../types/message';
 
-export type MessageLogContextType = {
+export type AppContextType = {
     messages: Message[],
-    addToMessageLog: (message: Message) => void
+    addToMessageLog: (message: Message) => void,
+    stage: AssistantResponseStage,
+    setStage: (stage: AssistantResponseStage) => void,
+    awaitingChatResponse: boolean,
+    setAwaitingChatResponse: (x: boolean) => void,
 }
-export const MessageLogContext = createContext<MessageLogContextType|null>(null);
+export const AppContext = createContext<AppContextType|null>(null);
 

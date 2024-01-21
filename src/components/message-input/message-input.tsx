@@ -7,7 +7,7 @@ import { HiArrowUp } from "react-icons/hi";
 import './message-input.scss';
 
 // Import Other:
-import { MessageLogContextType, MessageLogContext } from '../../contexts/message-log-context';
+import { AppContextType, AppContext } from '../../contexts/message-log-context';
 
 // Import Types:
 import { Message } from '../../types/message';
@@ -16,7 +16,7 @@ import { Message } from '../../types/message';
  * Reuasuable Message Input Component
  */
 const MessageInput: React.FC = ({}) => {
-    const context: MessageLogContextType | null = useContext(MessageLogContext);
+    const context: AppContextType | null = useContext(AppContext);
     
     const [value, setValue] = useState<string>('');
 
@@ -27,6 +27,9 @@ const MessageInput: React.FC = ({}) => {
 
         // Reset User Input:
         setValue('');
+
+        // 
+        // if (context?.messages.length === 0 || )
     }, [value]);
 
     return (
