@@ -18,8 +18,10 @@ function App() {
 
   return (
       <MessageLogContext.Provider value={{messages: messageLog, addToMessageLog: addToMessageLog}}>
-        <MessageDisplay />
-        <MessageInput/>
+        <div style={{display:'flex', flexDirection:'column', justifyContent:'space-between', height:"100vh"}}>
+          <MessageDisplay />
+          <MessageInput/>
+        </div>
       </MessageLogContext.Provider>
   )
 }

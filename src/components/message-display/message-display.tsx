@@ -9,7 +9,7 @@ export default function MessageDisplay() {
     const messageLogContext = useContext(MessageLogContext) as MessageLogContextType;
 
     return (
-        <div>
+        <div className="message-display" style={{display:"flex", flexDirection:"column", gap: "10px"}}>
             {messageLogContext.messages.map((message, index) => (
                 <MessageBox key={index} role={message.role} message={message.content} />
             ))}

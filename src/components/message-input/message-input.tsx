@@ -30,7 +30,7 @@ const MessageInput: React.FC = ({}) => {
     }, [value]);
 
     return (
-        <Row>
+        <Row className="message-input-container">
             <Col span={12}>
                 <TextArea
                     value={value}
