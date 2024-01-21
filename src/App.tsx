@@ -11,6 +11,7 @@ function App() {
   const [messageLog, setMessageLog] = useState<Message[]>([]);
   const [stage, setStage] = useState<AssistantResponseStage>(AssistantResponseStage.Asessing);
   const [awaitingChatResponse, setAwaitingChatResponse] = useState<boolean>(false);
+  const [assassingQuestions, setAssassingQuestions] = useState<{[key: string]: string}>({});
   
   const addToMessageLog = useCallback((message: Message) => {
     setMessageLog((prev) => [...prev, message]);
@@ -24,6 +25,8 @@ function App() {
         setStage,
         awaitingChatResponse,
         setAwaitingChatResponse,
+        assassingQuestions,
+        setAssassingQuestions
         }}>
  <div style={{display:'flex', flexDirection:'column', justifyContent:'space-between', height:"100vh"}}>
           <MessageDisplay />

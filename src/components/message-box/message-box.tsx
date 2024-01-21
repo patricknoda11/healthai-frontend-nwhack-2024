@@ -11,7 +11,7 @@ interface MessageBoxProps {
 }
 
 export default function MessageBox({ role, message }: MessageBoxProps) {
-    const avatar = role === 'user' ? assistantPic : catPic;
+    const avatar = role === 'user' ? catPic : assistantPic;
     const avatarPos = role === 'user' ? 'row-reverse' : 'row';
     return (
         <Box style={{display: 'flex', flexDirection: avatarPos, gap:"10px"}}>
