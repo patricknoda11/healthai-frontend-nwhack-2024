@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { Card, CardContent, Avatar, Typography, Box } from '@mui/material';
+import assistantPic from '../../assets/assistant1.jpg';
+import catPic from '../../assets/cat.jpg';
 
 interface MessageBoxProps {
     role: string;
@@ -9,7 +11,7 @@ interface MessageBoxProps {
 }
 
 export default function MessageBox({ role, message }: MessageBoxProps) {
-    const avatar = role === 'user' ? 'https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png' : 'https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png';
+    const avatar = role === 'user' ? assistantPic : catPic;
     const avatarPos = role === 'user' ? 'row-reverse' : 'row';
     return (
         <Box style={{display: 'flex', flexDirection: avatarPos, gap:"10px"}}>
