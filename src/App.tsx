@@ -4,6 +4,8 @@ import { MessageLogContext } from './contexts/message-log-context'
 import './App.scss'
 import { Message } from './types/message'
 import MessageInput from './components/message-input/message-input';
+import MessageBox from './components/message-box/message-box';
+import MessageDisplay from './components/message-display/message-display';
 
 function App() {
   const [messageLog, setMessageLog] = useState<Message[]>([]);
@@ -16,6 +18,7 @@ function App() {
 
   return (
       <MessageLogContext.Provider value={{messages: messageLog, addToMessageLog: addToMessageLog}}>
+        <MessageDisplay />
         <MessageInput/>
       </MessageLogContext.Provider>
   )
